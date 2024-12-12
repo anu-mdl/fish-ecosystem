@@ -84,7 +84,7 @@ class GroupBFish extends Fish {
         for (Fish prey : preyFish) {
             if (prey.population > 0) {
                 int foodTaken = Math.min(prey.population, totalFoodNeeded);
-                if (prey.population / population > 6) {
+                if (population > 0 && prey.population / population > 6) {
                     prey.population = Math.max(0, prey.population - foodTaken * 3);
                 } else {
                     int randomAdjustment = (foodTaken / 2 > 0) ? random.nextInt(Math.max(1, foodTaken)) : 0;
